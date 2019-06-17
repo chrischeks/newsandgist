@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class NewsDetailService {
-  PUNCH_URL = '/news/punchng';
-  LEADERSHIP_URL = '/news/leadershipng';
-  BUSINESS_DAY_URL = '/news/businessdayng';
-  LINDA_IKEJI_URL = '/blog/lindaikejisblog';
+  PUNCH_URL = 'news/punchng';
+  LEADERSHIP_URL = 'news/leadershipng';
+  BUSINESS_DAY_URL = 'news/businessdayng';
+  LINDA_IKEJI_URL = 'blog/lindaikejisblog';
   lindaBlog =[];
   businessdayObservable = this.http.get(this.BUSINESS_DAY_URL)
   
