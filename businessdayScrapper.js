@@ -35,7 +35,7 @@ const getBusinessDayResults = async () => {
     } catch (error) {
         console.log(error)
     }
-
+    //setInterval(getBusinessDayResults, 3000)
 };
 
 module.exports = getBusinessDayResults;

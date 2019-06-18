@@ -45,22 +45,6 @@ export class NewsDetailService {
     })
     return siteNews
   }
-
-  // async getThreeImages(){
-  //   let businessdayNews:any[] = await this.homepageNews(this.BUSINESS_DAY_URL);
-  //   console.log(businessdayNews, "hhhhhh")
-  //   let images = [businessdayNews[0]['image'], businessdayNews[1]['image'], businessdayNews[2]['image']]
-  //   console.log(images, 'images')
-  //     // this.businessdayObservable.subscribe((result:string[])=>{
-  //     //   for(let i= 0; i<3; i++){
-  //     //    const index= Math.floor(Math.random()* result.length-1)
-  //     //    const src = result[index]['image']
-  //     //   images.push(src)
-  //     //   }
-  //     // })
-  //     return images
-  //   }
-  
   
 
   get punchHomepage(){

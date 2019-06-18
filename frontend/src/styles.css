@@ -3,7 +3,6 @@
 
 a:hover {
     color:inherit;
-    background-color: transparent;
     cursor: pointer;
     text-decoration: none;
   }
@@ -14,3 +13,8 @@ a:hover {
     text-decoration: none;
   }
     
+  .col-md-4 a:hover{
+    cursor: pointer;
+    text-decoration: none;
+  }
+
