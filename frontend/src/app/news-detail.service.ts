@@ -6,17 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class NewsDetailService {
-  PUNCH_URL = 'news/punchng';
-  LEADERSHIP_URL = 'news/leadershipng';
-  BUSINESS_DAY_URL = 'news/businessdayng';
-  LINDA_IKEJI_URL = 'blog/lindaikejisblog';
-  lindaBlog =[];
-  businessdayObservable = this.http.get(this.BUSINESS_DAY_URL)
-  
+  BASE_URL =''
+  PUNCH_URL = `${this.BASE_URL}news/punchng`;
+  LEADERSHIP_URL = `${this.BASE_URL}news/leadershipng`;
+  BUSINESS_DAY_URL = `${this.BASE_URL}news/businessdayng`;
+  LINDA_IKEJI_URL = `${this.BASE_URL}blog/lindaikejisblog`;
 
   constructor(private http: HttpClient) { }
-
+  
   get punchNewsDetails() {
+    
     return this.http.get(this.PUNCH_URL)
   }
 
@@ -24,9 +23,6 @@ export class NewsDetailService {
     return this.http.get(this.LEADERSHIP_URL)
   }
 
-  get businessNewsDetails() {
-    return this.businessdayObservable
-  }
 
   get lindaIkejiBlogDetails() {
     return this.http.get(this.LINDA_IKEJI_URL)
@@ -34,10 +30,10 @@ export class NewsDetailService {
   }
 
   
-  homepageNews(url) {
+  private homepageNews(url, numberOfRetrival) {
     let siteNews: any[] = [];
     this.http.get(url).subscribe((result: string[]) => {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < numberOfRetrival; i++) {
         const index = Math.floor(Math.random() * (result.length - 1))
         const news = result[index]
         siteNews.push(news)
@@ -47,25 +43,25 @@ export class NewsDetailService {
   }
   
 
-  get punchHomepage(){
-    const punchNews:any[] = this.homepageNews(this.PUNCH_URL);
+  punchHomepage(numberOfRetrival){
+    const punchNews:any[] = this.homepageNews(this.PUNCH_URL, numberOfRetrival);
     return punchNews
   }
 
-  get leadershipHomepage(){
-    const leadershipNews:any[] = this.homepageNews(this.LEADERSHIP_URL);
+  leadershipHomepage(numberOfRetrival){
+    const leadershipNews:any[] = this.homepageNews(this.LEADERSHIP_URL, numberOfRetrival);
     return leadershipNews
   }
 
-  get lindaHomepage(){
-    const lindaNews:any[] = this.homepageNews(this.LINDA_IKEJI_URL);
+  lindaHomepage(numberOfRetrival){
+    const lindaNews:any[] = this.homepageNews(this.LINDA_IKEJI_URL, numberOfRetrival);
     return lindaNews
   }
 
-  get businessdayHomepage(){
-    const businessdayNews:any[] = this.homepageNews(this.BUSINESS_DAY_URL);
-    return businessdayNews
-  }
+  // businessdayHomepage(numberOfRetrival){
+  //   const businessdayNews:any[] = this.homepageNews(this.BUSINESS_DAY_URL,numberOfRetrival);
+  //   return businessdayNews
+  // }
 
 
 }

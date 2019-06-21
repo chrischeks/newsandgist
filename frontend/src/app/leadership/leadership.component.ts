@@ -13,8 +13,7 @@ export class LeadershipComponent implements OnInit {
 
   ngOnInit() {
     this.news = this.newsDetail.leadershipNewsDetails;
-    this.carouselImages = this.newsDetail.leadershipHomepage;
-
+    this.carouselImages = this.newsDetail.leadershipHomepage(3);
   }
 
 }

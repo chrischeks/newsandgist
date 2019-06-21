@@ -15,8 +15,7 @@ export class PunchComponent implements OnInit {
 
   ngOnInit() {
     this.news = this.newsDetails.punchNewsDetails;
-    this.carouselImages = this.newsDetails.punchHomepage
-    console.log(this.carouselImages, 'jjjjjjjjjjjj')
+    this.carouselImages = this.newsDetails.punchHomepage(3);
   }
 
 }

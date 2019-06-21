@@ -18,7 +18,7 @@ const getBusinessDayResults = async () => {
         let newsDetails = []
         target.each(async function () {
             const summary = $(this).find('.item-inner .post-summary').text();
-            const image = $(this).find('.img-holder').attr('data-bsrjs');
+            // const image = $(this).find('.img-holder').attr('data-bsrjs');
             const date = $(this).find('.post-published').attr('datetime').split("T")[0];
             const story = $(this).find('.title > a')
             const href = story.attr('href');
@@ -26,7 +26,7 @@ const getBusinessDayResults = async () => {
             newsDetails.push({
                 title,
                 summary,
-                image,
+                // image,
                 href,
                 date
             })
@@ -37,5 +37,4 @@ const getBusinessDayResults = async () => {
     }
     //setInterval(getBusinessDayResults, 3000)
 };
-
 module.exports = getBusinessDayResults;
