@@ -1,4 +1,3 @@
-a:hover small{
-    cursor: pointer;
-    text-decoration: none;
-  }
+.active{
+  z-index: 0
+}

@@ -1,39 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="topnav" id="myTopnav">
   <a class="navbar-brand" routerLink='/'>All News</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      
-      <li ngbDropdown class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          News Sites
-        </a>
-        <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/news/punch">Punch News Nigeria</a>
-          <a class="dropdown-item" routerLink="/news/leadership">Leadership News Nigeria</a>
-          <a class="dropdown-item" routerLink="/news/business_day">Business News Nigeria</a>
-        </div>
-        <li ngbDropdown class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Blogs
-          </a>
-          <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/blog/lindaikejisblog">Linda Ikejis Blog</a>
-          </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+  <div class="dropdown">
+    <button class="dropbtn">News Sites
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="dropdown-item" routerLink="/news/punch">Punch News Nigeria</a>
+      <a class="dropdown-item" routerLink="/news/leadership">Leadership News Nigeria</a>
+    </div>
   </div>
-</nav>
+  <div class="dropdown">
+    <button class="dropbtn">Blogs
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="dropdown-item" routerLink="/blog/lindaikejisblog">Linda Ikejis Blog</a>
+    </div>
+  </div>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="myFunction()">&#9776;</a>
+</div>

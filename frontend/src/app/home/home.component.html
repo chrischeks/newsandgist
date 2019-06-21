@@ -1,6 +1,3 @@
-<html>
-
-<body>
 
   <main role="main">
 
@@ -24,10 +21,9 @@
           <div class="col-md-4" *ngFor='let new of punchNews'>
             <a href={{new.href}} target="_blank">
               <div class="card mb-4 shadow-sm">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <image [attr.xlink:href]=new.image height="100%" width="100%" />
-                </svg>
+                <div>
+                  <img src={{new.image}} class="card-img-top img-fluid" alt="{{new.title}}" height="100%" width="100%" />
+                </div>
                 <div class="card-body">
                   <h6 class="card-title"><strong>{{new.title}}</strong></h6>
                   <p class="card-text"><small>{{new.summary}}</small> </p>
@@ -47,10 +43,9 @@
           <div class="col-md-4" *ngFor='let new of lindaNews'>
             <a href={{new.href}} target="_blank">
               <div class="card mb-4 shadow-sm">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <image [attr.xlink:href]=new.image height="100%" width="100%" />
-                </svg>
+                <div>
+                  <img src={{new.image}} class="card-img-top img-fluid" alt="{{new.title}}" height="100%" width="100%" />
+                </div>
                 <div class="card-body">
                   <h6 class="card-title"><strong>{{new.title}}</strong></h6>
                   <p class="card-text"><small>{{new.summary}}</small> </p>
@@ -60,20 +55,19 @@
             </a>
           </div>
         </div>
-
+        
         <div>
-            <a routerLink="/news/leadership" title="click here to go to the leadership news channel">
-              <button class="btn btn-primary">Leadership Newspaper</button>
-            </a>
-          </div>    
+          <a routerLink="/news/leadership" title="click here to go to the leadership news channel">
+            <button class="btn btn-primary">Leadership Newspaper</button>
+          </a>
+        </div>
         <div class="row">
           <div class="col-md-4" *ngFor='let new of leadershipNews'>
             <a href={{new.href}} target="_blank">
               <div class="card mb-4 shadow-sm">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <image [attr.xlink:href]=new.image height="100%" width="100%" />
-                </svg>
+                <div>
+                  <img src={{new.image}} class="card-img-top img-fluid" alt="{{new.title}}" height="100%" width="100%" />
+                </div>
                 <div class="card-body">
                   <h6 class="card-title"><strong>{{new.title}}</strong></h6>
                   <p class="card-text"><small>{{new.summary}}</small> </p>
@@ -94,10 +88,9 @@
           <div class="col-md-4" *ngFor='let new of businessdayNews'>
             <a href={{new.href}} target="_blank">
               <div class="card mb-4 shadow-sm">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <image [attr.xlink:href]=new.image height="100%" width="100%" />
-                </svg>
+                <div>
+                  <img src={{new.image}} class="card-img-top img-fluid" alt="{{new.title}}" height="100%" width="100%" />
+                </div>
                 <div class="card-body">
                   <h6 class="card-title"><strong>{{new.title}}</strong></h6>
                   <p class="card-text"><small>{{new.summary}}</small> </p>
@@ -120,6 +113,3 @@
       </p>
     </div>
   </footer>
-</body>
-
-</html>

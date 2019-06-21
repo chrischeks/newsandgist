@@ -7,15 +7,14 @@ import { NewsDetailService } from '../news-detail.service';
   styleUrls: ['./linda-ikeji.component.css']
 })
 export class LindaIkejiComponent implements OnInit {
-lindaBlog
+  lindaBlog
   carouselImages: any[];
   constructor(private newsDetail: NewsDetailService) {
-   }
+  }
 
   ngOnInit() {
     this.lindaBlog = this.newsDetail.lindaIkejiBlogDetails;
-    this.carouselImages = this.newsDetail.lindaHomepage
-
+    this.carouselImages = this.newsDetail.lindaHomepage(3);
   }
 
 }

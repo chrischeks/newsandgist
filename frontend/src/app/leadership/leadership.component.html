@@ -1,32 +1,50 @@
 <html>
+
 <body>
   <main role="main">
-      <section class="jumbotron text-center">
-        
-          <ngb-carousel *ngIf="carouselImages">
-            <span *ngFor="let news of carouselImages">
-              <ng-template ngbSlide>
-                <img [src]="news.image" alt="Random first slide">
+    <section class="jumbotron text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">
+              Top News
+            </button>
+            <span *ngFor="let side of carouselImages">
+              <a href={{side.href}} target="_blanket">
+                <button type="button" class="list-group-item list-group-item-action">{{side.title}}</button>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <ngb-carousel class="col-md-6" *ngIf="carouselImages">
+          <span *ngFor="let news of carouselImages">
+            <ng-template ngbSlide>
+              <a href={{news.href}} target="_blanket">
+                <img [src]="news.image" class="card-img-slide" alt="Random first slide">
                 <div class="carousel-caption">
                   <span style="background-color: #000000; color:#ffffff">{{news.title}}</span>
                 </div>
-              </ng-template>
-  
-            </span>
-          </ngb-carousel>
-      </section>
+              </a>
+
+            </ng-template>
+          </span>
+        </ngb-carousel>
+
+        <div class="col-md-2"></div>
+      </div>
+    </section>
 
     <div class="album py-5 bg-light">
       <div class="container">
-
         <div class="row">
           <div class="col-md-4" *ngFor='let new of news | async'>
             <a href={{new.href}} target="_blank">
               <div class="card mb-4 shadow-sm">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <image [attr.xlink:href]=new.image height="100%" width="100%" />
-                </svg>
+                <div>
+                  <img src={{new.image}} class="card-img-top img-fluid" alt="{{new.title}}" height="100%"
+                    width="100%" />
+                </div>
                 <div class="card-body">
                   <h6 class="card-title"><strong>{{new.title}}</strong></h6>
                   <p class="card-text"><small>{{new.summary}}</small> </p>
